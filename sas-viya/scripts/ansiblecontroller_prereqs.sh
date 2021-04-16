@@ -35,10 +35,10 @@ sed -i -e '/Defaults    requiretty/{ s/.*/# Defaults    requiretty/ }' /etc/sudo
 
 echo "$(date)"
 echo "Creating the share on the storage account."
-yum install -y rh-python36 gcc time
-/opt/rh/rh-python36/root/usr/bin/pip install --upgrade pip
-/opt/rh/rh-python36/root/usr/bin/pip3 install azure-cli
-/opt/rh/rh-python36/root/usr/bin/az storage share create --name ${azure_storage_files_share} --connection-string "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=${azure_storage_account};AccountKey=${azure_storage_files_password}"
+yum install -y python36 gcc time
+pip3 install --upgrade pip
+pip3 install azure-cli
+az storage share create --name ${azure_storage_files_share} --connection-string "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=${azure_storage_account};AccountKey=${azure_storage_files_password}"
 
 echo "setup cifs"
 cifs_server_fqdn="${azure_storage_account}.file.core.windows.net"
