@@ -57,6 +57,7 @@
         bash "{{ SSL_WORKING_FOLDER }}/mintCert.sh"
         # Converting the doc to base64 for web consumption
         cat "{{ SSL_WORKING_FOLDER }}/{{ SSL_CHILD_CERT_FILENAME }}" | base64 -w 0 > "{{ SSL_CLIENT_BASE64 }}"
+        sudo chown -R vmuser:vmuser "{{ SSL_WORKING_FOLDER }}"
     run_once: true
     delegate_to: localhost
 
