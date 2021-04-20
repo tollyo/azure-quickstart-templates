@@ -26,7 +26,7 @@ cifs_server_fqdn="${azure_storage_account}.file.core.windows.net"
 
 yum install -y yum-utils
 # on 4/17, we started having intermittent issues with this repository being present for updates, so configuring to skip
-yum-config-manager --save --setopt=rhui-microsoft-azure-rhel7-eus.skip_if_unavailable=true
+# yum-config-manager --save --setopt=rhui-microsoft-azure-rhel7-eus.skip_if_unavailable=true
 
 
 # remove the requiretty from the sudoers file. Per bug https://bugzilla.redhat.com/show_bug.cgi?id=1020147 this is unnecessary and has been removed on future releases of redhat, 
