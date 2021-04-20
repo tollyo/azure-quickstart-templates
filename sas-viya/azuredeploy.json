@@ -645,9 +645,9 @@
         },
         "storageProfile": {
           "imageReference": {
-            "publisher": "RedHat",
-            "offer": "RHEL",
-            "sku": "7.7",
+            "publisher": "Oracle",
+            "offer": "Oracle-Linux",
+            "sku": "ol83-lvm-gen2",
             "version": "latest"
           },
           "osDisk": {
@@ -1104,9 +1104,9 @@
         },
         "storageProfile": {
           "imageReference": {
-            "publisher": "RedHat",
-            "offer": "RHEL",
-            "sku": "7.7",
+            "publisher": "Oracle",
+            "offer": "Oracle-Linux",
+            "sku": "ol83-lvm-gen2",
             "version": "latest"
           },
           "osDisk": {
@@ -1256,9 +1256,9 @@
         },
         "storageProfile": {
           "imageReference": {
-            "publisher": "RedHat",
-            "offer": "RHEL",
-            "sku": "7.7",
+            "publisher": "Oracle",
+            "offer": "Oracle-Linux",
+            "sku": "ol83-lvm-gen2",
             "version": "latest"
           },
           "osDisk": {
@@ -1511,9 +1511,9 @@
         },
         "storageProfile": {
           "imageReference": {
-            "publisher": "RedHat",
-            "offer": "RHEL",
-            "sku": "7.7",
+            "publisher": "Oracle",
+            "offer": "Oracle-Linux",
+            "sku": "ol83-lvm-gen2",
             "version": "latest"
           },
           "osDisk": {
