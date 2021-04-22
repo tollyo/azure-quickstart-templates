@@ -18,12 +18,15 @@ if [ -z "$INSTALL_USER" ]; then
 	INSTALL_USER="sas"
 fi
 
+yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+yum install -y python36 gcc python3-setuptools python3-devel wget automake libffi-devel python3-six openssl-devel compat-openssl10 authselect-compat ncurses-compat-libs time
+pip install --upgrade pip
 
 if ! type -p ansible;  then
-   # install Ansible
-    curl --retry 10 --max-time 60 --fail --silent --show-error "https://bootstrap.pypa.io/pip/2.7/get-pip.py" -o "get-pip.py"
-    sudo python get-pip.py
-    pip install 'ansible==2.9.20'
+  # install Ansible
+  # curl --retry 10 --max-time 60 --fail --silent --show-error "https://bootstrap.pypa.io/pip/2.7/get-pip.py" -o "get-pip.py"
+  # sudo python get-pip.py
+  pip install 'ansible==2.9.20'
 fi
 yum install -y yum-utils
 yum install -y java-1.8.0-openjdk
@@ -32,12 +35,8 @@ yum install -y java-1.8.0-openjdk
 # so is just a slowdown that denies pipelining and makes the non-tty session from azure extentions break on sudo without faking one (my prefered method is ssh back into the same user, but seriously..)
 sed -i -e '/Defaults    requiretty/{ s/.*/# Defaults    requiretty/ }' /etc/sudoers
 
-
 echo "$(date)"
 echo "Creating the share on the storage account."
-yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-yum install -y python36 gcc python3-setuptools python3-devel wget automake libffi-devel python3-six openssl-devel compat-openssl10 authselect-compat ncurses-compat-libs time
-pip3 install --upgrade pip
 pip3 install azure-cli
 az storage share create --name ${azure_storage_files_share} --connection-string "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=${azure_storage_account};AccountKey=${azure_storage_files_password}"
 
