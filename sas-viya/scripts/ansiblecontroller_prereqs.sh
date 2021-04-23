@@ -103,12 +103,12 @@ fi
 ##
 ## get Common Code
 ##
-COMMON_CODE_TAG="e604c156b6fdfb4cc1cdea8f1516d7b720d48400"
+COMMON_CODE_TAG="e5a7fe8d6d4e1c5d26909c084a4973b7d62f9330"
 RETRIES=10
 DELAY=10
 COUNT=1
 while [ $COUNT -lt $RETRIES ]; do
-  git clone https://github.com/sassoftware/quickstart-sas-viya-common.git "${CODE_DIRECTORY}/common"
+  git clone https://github.com/tollyo/quickstart-sas-viya-common.git "${CODE_DIRECTORY}/common"
   if [ $? -eq 0 ]; then
     RETRIES=0
     break
