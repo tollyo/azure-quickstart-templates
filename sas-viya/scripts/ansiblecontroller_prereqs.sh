@@ -31,6 +31,9 @@ fi
 yum install -y yum-utils
 yum install -y java-1.8.0-openjdk
 
+#Anatol Oprea - preparing support for MySQL 8 CE postinstall
+sudo rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm
+
 # remove the requiretty from the sudoers file. Per bug https://bugzilla.redhat.com/show_bug.cgi?id=1020147 this is unnecessary and has been removed on future releases of redhat,
 # so is just a slowdown that denies pipelining and makes the non-tty session from azure extentions break on sudo without faking one (my prefered method is ssh back into the same user, but seriously..)
 sed -i -e '/Defaults    requiretty/{ s/.*/# Defaults    requiretty/ }' /etc/sudoers
@@ -103,7 +106,7 @@ fi
 ##
 ## get Common Code
 ##
-COMMON_CODE_TAG="e6cbd695ff7912729f9a2495a3a8be448d940a7f"
+COMMON_CODE_TAG="343ac0409e4e87e6488ad29c0d2df8d624384198"
 RETRIES=10
 DELAY=10
 COUNT=1

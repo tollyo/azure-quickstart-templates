@@ -30,6 +30,9 @@ yum install -y yum-utils
 # yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 # yum install -y python36 gcc python3-setuptools python3-devel wget automake libffi-devel python3-six openssl-devel compat-openssl10 authselect-compat ncurses-compat-libs time
 
+#Anatol Oprea - preparing support for MySQL 8 CE postinstall
+sudo rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm
+
 # remove the requiretty from the sudoers file. Per bug https://bugzilla.redhat.com/show_bug.cgi?id=1020147 this is unnecessary and has been removed on future releases of redhat, 
 # so is just a slowdown that denies pipelining and makes the non-tty session from azure extentions break on sudo without faking one (my prefered method is ssh back into the same user, but seriously..)
 sed -i -e '/Defaults    requiretty/{ s/.*/# Defaults    requiretty/ }' /etc/sudoers
