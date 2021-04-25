@@ -795,9 +795,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2019-10-01",
       "dependsOn": [
-        "[resourceId('Microsoft.Resources/deployments', 'AnsiblePhase3GetLBCertPart2')]",
-        "[resourceId('Microsoft.Compute/virtualMachines/extensions', 'controller/CASStartup')]",
-        "[resourceId('Microsoft.Compute/virtualMachines/extensions', 'services/ServicesStartup')]"
+        "[resourceId('Microsoft.Resources/deployments', 'AnsiblePhase3GetLBCertPart2')]"
       ],
       "properties": {
         "mode": "Incremental",
