@@ -647,7 +647,7 @@
           "imageReference": {
             "publisher": "Oracle",
             "offer": "Oracle-Linux",
-            "sku": "ol77-gen2",
+            "sku": "ol83-lvm",
             "version": "latest"
           },
           "osDisk": {
@@ -1106,7 +1106,7 @@
           "imageReference": {
             "publisher": "Oracle",
             "offer": "Oracle-Linux",
-            "sku": "ol77-gen2",
+            "sku": "ol83-lvm",
             "version": "latest"
           },
           "osDisk": {
@@ -1258,7 +1258,7 @@
           "imageReference": {
             "publisher": "Oracle",
             "offer": "Oracle-Linux",
-            "sku": "ol77-gen2",
+            "sku": "ol83-lvm",
             "version": "latest"
           },
           "osDisk": {
@@ -1513,7 +1513,7 @@
           "imageReference": {
             "publisher": "Oracle",
             "offer": "Oracle-Linux",
-            "sku": "ol77-gen2",
+            "sku": "ol83-lvm",
             "version": "latest"
           },
           "osDisk": {
