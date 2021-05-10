@@ -24,15 +24,15 @@ pip3 install --upgrade pip
 
 if ! type -p ansible;  then
   # install Ansible
-  # curl --retry 10 --max-time 60 --fail --silent --show-error "https://bootstrap.pypa.io/pip/2.7/get-pip.py" -o "get-pip.py"
-  # sudo python get-pip.py
+  curl --retry 10 --max-time 60 --fail --silent --show-error "https://bootstrap.pypa.io/pip/2.7/get-pip.py" -o "get-pip.py"
+  sudo python get-pip.py
   pip install 'ansible==2.9.20'
 fi
 yum install -y yum-utils
 yum install -y java-1.8.0-openjdk
 
-#Anatol Oprea - preparing support for MySQL 8 CE postinstall
-sudo rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm
+# Anatol Oprea - preparing support for MySQL 8 CE postinstall
+# sudo rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm
 
 # remove the requiretty from the sudoers file. Per bug https://bugzilla.redhat.com/show_bug.cgi?id=1020147 this is unnecessary and has been removed on future releases of redhat,
 # so is just a slowdown that denies pipelining and makes the non-tty session from azure extentions break on sudo without faking one (my prefered method is ssh back into the same user, but seriously..)
@@ -106,7 +106,7 @@ fi
 ##
 ## get Common Code
 ##
-COMMON_CODE_TAG="343ac0409e4e87e6488ad29c0d2df8d624384198"
+COMMON_CODE_TAG="7b2e9da1f4b5c2d140f34fecaa873bfb3ab7d4fc"
 RETRIES=10
 DELAY=10
 COUNT=1
