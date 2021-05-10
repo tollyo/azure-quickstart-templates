@@ -18,6 +18,10 @@ if [ -z "$INSTALL_USER" ]; then
 	INSTALL_USER="sas"
 fi
 
+wget -q https://repo.symas.com/configs/SOFL/rhel8/sofl.repo -O /etc/yum.repos.d/sofl.repo
+sudo yum update -y
+sudo yum install -y symas-openldap-clients symas-openldap-servers
+
 # yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 yum install -y python3 gcc python3-setuptools python3-devel python3-wheel python3-six wget automake libffi-devel  openssl-devel compat-openssl10 authselect-compat ncurses-compat-libs time
 pip3 install --upgrade pip
@@ -106,7 +110,7 @@ fi
 ##
 ## get Common Code
 ##
-COMMON_CODE_TAG="7b2e9da1f4b5c2d140f34fecaa873bfb3ab7d4fc"
+COMMON_CODE_TAG="1f91cbcb04b4f264e1993cdf350cdd3783485608"
 RETRIES=10
 DELAY=10
 COUNT=1
