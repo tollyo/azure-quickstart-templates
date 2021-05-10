@@ -19,7 +19,7 @@ if [ -z "$INSTALL_USER" ]; then
 fi
 
 # yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-yum install -y python36 gcc python3-setuptools python3-devel python3-wheel python3-six wget automake libffi-devel  openssl-devel compat-openssl10 authselect-compat ncurses-compat-libs time
+yum install -y python3 gcc python3-setuptools python3-devel python3-wheel python3-six wget automake libffi-devel  openssl-devel compat-openssl10 authselect-compat ncurses-compat-libs time
 pip3 install --upgrade pip
 
 if ! type -p ansible;  then
