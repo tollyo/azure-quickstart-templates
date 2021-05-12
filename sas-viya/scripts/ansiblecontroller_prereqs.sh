@@ -18,9 +18,9 @@ if [ -z "$INSTALL_USER" ]; then
 	INSTALL_USER="sas"
 fi
 
-wget -q https://repo.symas.com/configs/SOFL/rhel8/sofl.repo -O /etc/yum.repos.d/sofl.repo
-sudo yum update -y
-sudo yum install -y symas-openldap-clients symas-openldap-servers
+# wget -q https://repo.symas.com/configs/SOFL/rhel8/sofl.repo -O /etc/yum.repos.d/sofl.repo
+# sudo yum update -y
+# sudo yum install -y symas-openldap-clients symas-openldap-servers
 
 # yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 yum install -y python3 gcc python3-setuptools python3-devel python3-wheel python3-six wget automake libffi-devel  openssl-devel compat-openssl10 authselect-compat ncurses-compat-libs time
@@ -36,7 +36,7 @@ yum install -y yum-utils
 yum install -y java-1.8.0-openjdk
 
 # Anatol Oprea - preparing support for MySQL 8 CE postinstall
-# sudo rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm
+sudo rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm
 
 # remove the requiretty from the sudoers file. Per bug https://bugzilla.redhat.com/show_bug.cgi?id=1020147 this is unnecessary and has been removed on future releases of redhat,
 # so is just a slowdown that denies pipelining and makes the non-tty session from azure extentions break on sudo without faking one (my prefered method is ssh back into the same user, but seriously..)
@@ -110,7 +110,7 @@ fi
 ##
 ## get Common Code
 ##
-COMMON_CODE_TAG="1f91cbcb04b4f264e1993cdf350cdd3783485608"
+COMMON_CODE_TAG="343ac0409e4e87e6488ad29c0d2df8d624384198"
 RETRIES=10
 DELAY=10
 COUNT=1
